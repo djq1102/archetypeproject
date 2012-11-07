@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<#import "/spring.ftl" as spring/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="${cssServer}/css/global.css" type="text/css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>弹出框</title>
+<script type="text/javascript">
+function createBiz(){
+	var form = document.getElementById();
+	form.submit();
+}
+</script>
+</head>
+<body>
+<form id="infoForm" method="post" action="create.do">
+<div class="window_content" >           
+            <div class="window_content_list">
+            	<table class="tb" border="0" >
+                  <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">用户名：</td>
+                    <td width="80%">
+      <input class="text" name="name" type="text" /><span style="color:#999; font-size:12px;"><@spring.bind "demoBiz.name"/><@spring.showErrors "demoBiz.name" "<br>"/></span></td>
+                  </tr>
+                   <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">手机号：</td>
+                    <td width="80%"><input class="text" name="mobile" type="text" /><span style="color:#999; font-size:12px;"><@spring.bind "demoBiz.mobile"/><@spring.showErrors "demoBiz.mobile"  "<br>"/></span></td>
+                  </tr>
+                  <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">email：</td>
+                    <td width="80%"><input class="text" name="email" type="text" /><span style="color:#999; font-size:12px;">此信息提交后将不能修改！ </span></td>
+                  </tr>
+                   <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">地址：</td>
+                    <td width="80%"><input class="text" name="address" type="text" /><span style="color:#999; font-size:12px;">此信息提交后将不能修改！ </span></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:right;">业务类型：</td>
+                     <td><select class="select "  name="bizType" >
+            <option value="1">代理商</option>
+            <option value="2">商户</option>
+            </select></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:right;">状态：</td>
+                    <td><select class="select "  name="status" >
+            <option value="0">正常</option>
+            <option value="1">冻结</option>
+            </select></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:right;">备注：</td>
+                    <td><textarea  style=" width:180px; height:100px; padding:5px 5px;" name="" cols="" rows="">&nbsp;</textarea></td>
+                  </tr>
+                  <button type="onclick=" onclick="create()">提交</button>
+                   <button type="button" onclick="javascript:window.close()">关闭</button>
+                </table>
+            </div>
+</div>
+</form>
+</body>
+</html>

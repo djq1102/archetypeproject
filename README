@@ -1,0 +1,7 @@
+一个maven的archetype工程，使用Maven的archetype直接生成项目骨架
+1、domain：所有的业务对象包
+2、service：所有的业务服务包，事务控制在这层
+3、busi：所有的业务逻辑包
+4、web：所有的页面action等元素，使用springMVC实现一个CRUD的基础demo
+5、webservice：对外服务api工程，使用cxf以及restlet提供服务
+6、config：其他包的配置信息，componenets：公共组件包如：邮件组件、短信组件等，core：核心工具类包

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="${cssServer}/css/global.css" type="text/css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>一客通管理平台</title>
+<script type="text/javascript">
+function changeTrColor(obj){    
+    var _table=obj.parentNode;
+    for (var i=0;i<_table.rows.length;i++){
+        _table.rows[i].style.backgroundColor="";
+    }    
+    obj.style.backgroundColor="#fff6c4";
+}
+
+function searchBiz(){
+	var form = document.getElementById("searchForm");
+	form.submit();
+}
+
+function createBiz(){
+	var bizInfWindow = window.open("createForm.do","新增窗口","width=600,height=500");
+}
+
+function editBiz(id){
+	var bizInfWindow = window.open("edit.do?id="+id,"窗口","width=600,height=500");
+}
+
+function viewBiz(id){
+	var bizInfWindow = window.open("info.do?id="+id,"窗口","width=600,height=500");
+}
+
+</script>
+</head>
+<body>
+	${staticServer!}
+    <div class="top">
+   	  <div class="top_logo"><a href="#"><img src="${imageServer}/demo/top_logo.jpg" width="173" height="46" /></a></div>
+        <div class="top_info">您好，<span style="color:#ff4e00;">系统管理员</span>欢迎登录一客通平台管理站。<span style="margin:0 5px;"><a href="#">修改密码</a></span><span style="margin:0 5px;"><a href="#" >退出</a></span></div>
+    </div>
+    
+    <div class="main">
+    	<form id="searchForm" method="post" action="list.do">
+    	<div class="search">
+            账户类型：<select class="s_time_l"  name="bizType" ><option value="">所有</option><option value="104001">代理商</option>
+            <option value="1">代理商</option>
+            <option value="2">商户</option>
+            <option value="3">其他</option>
+            </select>
+            账户手机号：<input class="s_text" name="mobile" type="text" />
+			</p>
+            账户状态：<select class="s_time_l"  name="status" ><option value="">所有</option><option value="104001">代理商</option>
+            <option value="0">正常</option>
+            <option value="1">冻结</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商户名：<input class="s_text" name="name" type="text" />
+			</p>
+            </div>
+            <div style="float:left;"><p class="h_search_button"><span class="search_button" onclick="javascript:searchBiz()"><a ></a></span></p></div>
+        </div>
+        </form>
+        <div style="clear:both; float:none;"></div>
+        <div class="content">
+        	<div class="content_title">
+            <table width="100%" border="0" class="content_title_bg">
+              <tr>
+                <td class="content_title_bg_l">&nbsp;</td>
+                <td class="content_title_bg_m">账户查询结果</td>
+                <td class="content_title_button"><a href="#" onclick="createBiz()">添加账户</a></td>
+                <td class="content_title_bg_r">&nbsp;</td>
+              </tr>
+			</table>
+			</div>
+            <div class="content_list">
+            <table class="content_tag" width="100%" border="0">
+              <tr>
+                <td class="content_list_tag1">序号</td>
+                <td class="content_list_tag2">银通账户名</td>
+                <td class="content_list_tag3">商户名</td>
+                <td class="content_list_tag4">所有人</td>
+                <td class="content_list_tag5">手机号</td>
+                <td class="content_list_tag6">修改时间</td>
+                <td class="content_list_tag7">账户类型</td>
+                <td class="content_list_tag8">账户状态</td>
+                <td class="content_list_tag9" style="border-right:none;">操作栏</td>
+              </tr>
+			</table>
+            <table width="100%" border="0" class="content_list_123">
+            	<!--第一行开始-->
+            <#list page.result as list>
+              <tr class="content_list_tr1" style="cursor:hand;" onmouseout="" onmousemove="changeTrColor(this)">
+                <td class="content_list_tag1">${list_index+1}</td>
+                <td class="content_list_tag2">${list.id!}</td>
+                <td class="content_list_tag3">${list.name!}</td>
+                <td class="content_list_tag4">${list.name!}</td>
+                <td class="content_list_tag5">${list.mobile!}</td>
+                <td class="content_list_tag6">${list.createTime!}</td>
+                <td class="content_list_tag7">${list.bizType!}</td>
+                <td class="content_list_tag8">${list.status!}</td>
+                <td class="content_list_tag9">
+                <table border="0" style="text-align:center; margin:auto;">
+                  <tr>
+                    <td>
+                        <table class="button" border="0">
+                      <tr>
+                        <td class="button_l"></td>
+                        <td class="button_m"><a href="#" onclick="viewBiz(${list.id!})">查看</a></td>
+                        <td class="button_r"></td>
+                      </tr>
+                        </table>
+                	</td>
+                    <td>
+                        <table class="button" border="0">
+                      <tr>
+                        <td class="button_l"></td>
+                        <td class="button_m"><a href="#" onclick="editBiz(${list.id!})">修改</a></td>
+                        <td class="button_r"></td>
+                      </tr>
+                    </table>
+                    </td>
+                    <td>
+                        <table class="button" border="0">
+                    </table>
+                    </td>
+                  </tr>
+                </table>
+                </td>
+              </tr>
+              </#list>
+              <!--第一行结束-->
+              
+			</table>
+            <!--翻页开始-->
+            <table class="content_list_page" width="100%" border="0">
+  <tr>
+    <td>
+    <form id="pageForm" method="get">
+    <div style="float:left; vertical-align:middle;"><img style="vertical-align:middle; font-family:Tahoma; margin:0px 5px;" src="${imageServer}/demo/print.png" width="16" height="16" /><a href="#">打印</a></div><div style="float:right;">共<strong>${page.totalCount!}</strong>条记录，共<strong>${page.totalPageCount}</strong>页，当前第<strong>${page.currentPageNo}</strong>页；第<input class="page_text" name="pageNo" id="pageNo" type="text" /><button  type="submit"  >确定</button>
+    <#if page.hasPreviousPage()>
+    <span class="page_button1"><a href="list.do?pageNo=${page.currentPageNo-1}" >上一页</a></span>
+    </#if>
+     <#if page.hasNextPage()>
+    <span class="page_button2"><a href="list.do?pageNo=${page.currentPageNo+1}">下一页</a></span></div></td>
+    </#if>
+  	</form>
+  </tr>
+</table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

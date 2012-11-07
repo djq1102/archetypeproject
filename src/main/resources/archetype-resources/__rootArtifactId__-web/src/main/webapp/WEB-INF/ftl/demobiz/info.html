@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="${cssServer}/css/global.css" type="text/css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>弹出框</title>
+<script type="text/javascript">
+function createdemoBiz(){
+	var form = document.getElementById();
+	form.submit();
+}
+</script>
+</head>
+<body>
+<form id="infoForm" method="post" action="update.do">
+<div class="window_content" >            
+<input type="hidden" name="id" value="${demoBiz.id!}"/>
+            <div class="window_content_list">
+            	<table class="tb" border="0" >
+                  <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">用户名：</td>
+                    <td width="80%">${demoBiz.name!}</td>
+                  </tr>
+                   <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">手机号：</td>
+                    <td width="80%">${demoBiz.mobile!}</td>
+                  </tr>
+                  <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">email：</td>
+                    <td width="80%">${demoBiz.email!}</td>
+                  </tr>
+                   <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">地址：</td>
+                    <td width="80%">${demoBiz.address!}</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:right;">业务类型：</td>
+                     <td><#if demoBiz.demoBizType?exists && demoBiz.demoBizType == 1>代理商
+                     	<#else>
+                     	商户
+                      </#if>
+                  </tr>
+                  <tr>
+                    <td style="text-align:right;">状态：</td>
+                    <td><#if demoBiz.status?exists && demoBiz.status == 0>正常
+                     	<#else>
+                     	冻结
+                      </#if></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:right;">备注：</td>
+                    <td>${demoBiz.comments!}</td>
+                  	
+                  </tr>
+                   <tr>
+                    <td>  <button type="button" onclick="javascript:window.close()">关闭</button></td>
+                  	
+                  </tr>
+                
+                 
+                </table>
+            </div>
+</div>
+</form>
+</body>
+</html>

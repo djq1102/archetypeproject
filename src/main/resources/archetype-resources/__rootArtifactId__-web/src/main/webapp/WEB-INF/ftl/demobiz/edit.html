@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<#import "../walket.ftl" as spring/>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="${cssServer}/css/global.css" type="text/css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>弹出框</title>
+<script type="text/javascript">
+function createdemoBiz(){
+	var form = document.getElementById();
+	form.submit();
+}
+</script>
+</head>
+<body>
+<form id="infoForm" method="post" action="update.do">
+<div class="window_content" >            
+<input type="hidden" name="id" value="${demoBiz.id!}"/>
+            <div class="window_content_list">
+            	<table class="tb" border="0" >
+                  <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">用户名：</td>
+                    <td width="80%"><input class="text" name="name" type="text" value="${demoBiz.name!}"/> <span style="color:#999; font-size:12px;"><@spring.showError "demoBiz.name" "<br>"/> </span></td>
+                  </tr>
+                   <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">手机号：</td>
+                    <td width="80%"><input class="text" name="mobile" type="text" value="${demoBiz.mobile!}"/> <span style="color:#999; font-size:12px;">此信息提交后将不能修改！ </span></td>
+                  </tr>
+                  <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">email：</td>
+                    <td width="80%"><input class="text" name="email" type="text" value="${demoBiz.email!}"/> <span style="color:#999; font-size:12px;">此信息提交后将不能修改！ </span></td>
+                  </tr>
+                   <tr style="padding-top:20px;">
+                    <td width="20%" style="text-align:right;">地址：</td>
+                    <td width="80%"><input class="text" name="address" type="text" value="${demoBiz.address!}"/> <span style="color:#999; font-size:12px;">此信息提交后将不能修改！ </span></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:right;">业务类型：</td>
+                     <td><select class="select "  name="demoBizType" >
+           				 	<option value="1" <#if demoBiz.demoBizType?exists && demoBiz.demoBizType == 1>selected="selected" </#if>>代理商</option>
+            				<option value="2" <#if demoBiz.demoBizType?exists && demoBiz.demoBizType == 2>selected="selected"</#if>>商户</option>
+            			</select></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:right;">状态：</td>
+                    <td><select class="select "  name="status" >
+            			<option value="0" <#if  demoBiz.status?exists && demoBiz.status == 0>selected="selected"</#if> >正常</option>
+            			<option value="1" <#if demoBiz.status?exists && demoBiz.status == 1>selected="selected"</#if> >冻结</option>
+            		</select></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:right;">备注：</td>
+                    <td><textarea  style=" width:180px; height:100px; padding:5px 5px;" name="comments" cols="" rows="">${demoBiz.comments!}</textarea></td>
+                  	
+                  </tr>
+                   <tr>
+                    <td style="text-align:right;">  <button type="onclick=" onclick="update()">提交</button></td>
+                    <td>  <button type="button" onclick="javascript:window.close()">关闭</button></td>
+                  	
+                  </tr>
+                
+                 
+                </table>
+            </div>
+</div>
+</form>
+</body>
+</html>

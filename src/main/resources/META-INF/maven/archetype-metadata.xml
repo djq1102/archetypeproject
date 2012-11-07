@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="yuntongarchetype">
+	<modules>
+		<module id="${rootArtifactId}-domain" dir="__rootArtifactId__-domain"
+			name="${rootArtifactId}-domain">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/test/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>**/domain/sqlmap/*.xml</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>/*.xml</include>
+						<include>/*.properties</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-service" dir="__rootArtifactId__-service"
+			name="${rootArtifactId}-service">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/test/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-busi" dir="__rootArtifactId__-busi"
+			name="${rootArtifactId}-busi">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-components" dir="__rootArtifactId__-components"
+			name="${rootArtifactId}-components">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-core" dir="__rootArtifactId__-core"
+			name="${rootArtifactId}-core">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-config" dir="__rootArtifactId__-config"
+			name="${rootArtifactId}-config">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>**/*.*</include>
+					</includes>
+				</fileSet>
+				<fileSet encoding="UTF-8">
+					<directory>src/main/filters</directory>
+					<includes>
+						<include>**/*.properties</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-web" dir="__rootArtifactId__-web"
+			name="${rootArtifactId}-web">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>**/*.xml</include>
+					</includes>
+				</fileSet>
+				<fileSet encoding="UTF-8">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>**/*.ftl</include>
+						<include>**/*.sql</include>
+						<include>**/*.properties</include>
+					</includes>
+				</fileSet>
+				<fileSet encoding="UTF-8">
+					<directory>src/main/filters</directory>
+					<includes>
+						<include>**/*.properties</include>
+					</includes>
+				</fileSet>
+				<fileSet encoding="UTF-8">
+					<directory>src/main/webapp</directory>
+					<includes>
+						<include>**/*.html</include>
+						<include>**/*.js</include>
+						<include>**/*.css</include>
+					</includes>
+				</fileSet>
+				<fileSet encoding="UTF-8" filtered="true">
+					<directory>src/main/webapp</directory>
+					<includes>
+						<include>**/*.jsp</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/webapp/WEB-INF</directory>
+					<includes>
+						<include>**/*.xml</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+		<module id="${rootArtifactId}-webservice" dir="__rootArtifactId__-webservice"
+			name="${rootArtifactId}-webservice">
+			<fileSets>
+				<fileSet filtered="true" encoding="UTF-8" packaged="true">
+					<directory>src/main/java</directory>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+				</fileSet>
+				<fileSet filtered="true" encoding="UTF-8">
+					<directory>src/main/resources</directory>
+					<includes>
+						<include>**/*.xml</include>
+					</includes>
+				</fileSet>
+				<fileSet encoding="UTF-8">
+					<directory>src/main/webapp</directory>
+					<includes>
+						<include>**/*.*</include>
+					</includes>
+				</fileSet>
+			</fileSets>
+		</module>
+	</modules>
+</archetype-descriptor>
